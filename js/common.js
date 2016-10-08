@@ -2,6 +2,19 @@ $(function() {
 
 	$(".menu-toggle").click(function() {
 		$(this).parent().toggleClass("menu-open");
+		if($(this).parent().hasClass("menu-open")) {
+			$(".main-menu").addClass("menu-show").removeClass("menu-hide");
+		} else {
+			$(".main-menu").addClass("menu-hide").removeClass("menu-show");
+		}
+	});
+
+	$(".sidebar-toggle").click(function() {
+		$(".sidebar").addClass("active");
+	});
+
+	$(".sidebar .fa-times").click(function() {
+		$(".sidebar").removeClass("active");
 	});
 	
 	var mySwiper = new Swiper ('.swiper-container', {
